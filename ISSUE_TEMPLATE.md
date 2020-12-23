@@ -1,0 +1,14 @@
+### Task List
+- [ ] Prepare - Prepare raw shownotes
+- [ ] Producción - Record
+- [ ] Producción - Sergio uploads MP3 to media.codigobot.com/raw
+- [ ] Producción - Kini uploads MP3 to media.codigobot.com/raw
+- [ ] Producción - Generate Public Show notes
+- [ ] Edición: Sergio puts both raw files in Ferrite, generate chapters and export them as MP3 with Ferrite.
+- [ ] Edición: - Sergio uploads final MP3 to media.codigobot.com/dist
+- [ ] Edición: - Verify MP3 is publicly available. Update markdown file with `enclosureLength`, `enclosureUrl`, `duration`. 
+- [ ] Edición - Update markdown file `pubDate` if required
+- [ ] Publicación - Mergear el PR del archivo de markdown a master y eso actualiza el RSS.xml
+- [ ] Publicación - Verify it is working in own client. 
+- [ ] Publicación - Distribute to channels (Youtube) which don’t pick up RSS automatically.
+- [ ] Promote - Tweet
