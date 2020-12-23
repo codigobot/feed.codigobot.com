@@ -7,7 +7,7 @@ podcast {
     link = 'https://codigobot.com'
     language = 'es'
     copyright = '&#169; 2020 Sergio del Amo'
-    description = 'Sergio del Amo y Kini sobre asistentes de voz (alexa skills), chatbots (telegram bots, slack bots), tecnología, productividad, opensource y programación.'
+    description = 'Sergio y Kini sobre asistentes de voz (alexa skills), chatbots (telegram bots, slack bots), tecnología, productividad, opensource y programación.'
     author = "Sergio del Amo y Joaquín Engelmo"
     type = 'EPISODIC'
     owner {
