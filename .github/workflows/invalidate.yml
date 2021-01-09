@@ -16,5 +16,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Invalidate    
-        run: |a
+        run: |
           aws cloudfront create-invalidation --distribution-id E24JBDZ9SSYC0H --paths "${{ github.event.inputs.path }}"
