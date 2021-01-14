@@ -15,7 +15,7 @@ podcast {
         email = "sergio.delamo@softamo.com"
     }
     image {
-        url = "https://media.codigobot.com/artwork.png"
+        url = "https://media.codigobot.com/artwork-beta.png"
         link = 'https://codigobot.com'
         title = 'Código Bot'
         width = 3000
