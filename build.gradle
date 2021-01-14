@@ -1,27 +1,3 @@
 plugins {
-    id "groovycalamari.podcast" version "0.0.1"
-}
-podcast {
-    episodes = file("episodes")
-    title = 'Código Bot'
-    link = 'https://codigobot.com'
-    language = 'es'
-    copyright = '&#169; 2020 Sergio del Amo'
-    description = 'Sergio y Kini hablan sobre tecnología, productividad, opensource, programación, asistentes de voz (alexa skills), chatbots (telegram bots, slack bots) etc.'
-    author = "Sergio del Amo y Joaquín Engelmo"
-    type = 'EPISODIC'
-    owner {
-        name = "Sergio del Amo"
-        email = "sergio.delamo@softamo.com"
-    }
-    image {
-        url = "https://media.codigobot.com/artwork.png"
-        link = 'https://codigobot.com'
-        title = 'Código Bot'
-        width = 3000
-        height = 3000
-    }
-    block = false
-    categories = 'TECHNOLOGY_SOFTWARE_HOWTO'
-    explicit = false
+  id 'base'
 }
