@@ -1,5 +1,5 @@
 plugins {
-    id "groovycalamari.podcast" version "0.0.3"
+    id "groovycalamari.podcast" version "0.0.4"
 }
 podcast {
     episodes = file("build/episodes")
