@@ -3,26 +3,26 @@ plugins {
 }
 podcast {
     episodes = file("episodes")
-    title = 'Código Bot'
-    link = 'https://codigobot.com'
+    title = 'Jaque a la descubierta'
+    link = 'https://www.radioarrebato.net/programas/jaque-a-la-descubierta/'
     language = 'es'
-    copyright = '&#169; 2020 Sergio del Amo'
-    description = 'Sergio y Kini hablan sobre tecnología, productividad, opensource, programación, asistentes de voz (alexa skills), chatbots (telegram bots, slack bots) etc.'
-    author = "Sergio del Amo y Joaquín Engelmo"
+    copyright = '&#169; 2025 Asociación Ajedrez Callejero'
+    description = 'Programa de la Asociación de Ajedrez Callejero de Guadalajara. Entrevistas, noticias, historia, problemas ajedrecísticos y mucho más. Todos los lunes, de 19:30 a 20:30 en Radio Arrebato.'
+    author = "Asociación Ajedrez Callejero"
     type = 'EPISODIC'
     owner {
-        name = "Sergio del Amo"
-        email = "sergio.delamo@softamo.com"
+        name = "Asociación Ajedrez Callejero"
+        email = "ajedrezcallejeroguadalajara@gmail.com"
     }
     image {
-        url = "https://media.codigobot.com/artwork.png"
-        link = 'https://codigobot.com'
-        title = 'Código Bot'
+        url = "https://ajedrezcallejeroguadalajara.com/podcast/jaque-a-la-descubierta.jpg"
+        link = 'https://www.radioarrebato.net/programas/jaque-a-la-descubierta/'
+        title = 'Jaque a la descubierta'
         width = 3000
         height = 3000
     }
     block = false
-    categories = 'TECHNOLOGY_SOFTWARE_HOWTO'
+    categories = 'GAMES_AND_HOBBIES'
     explicit = false
 }
 
