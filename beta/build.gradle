@@ -1,0 +1,81 @@
+plugins {
+    id "groovycalamari.podcast" version "0.0.4"
+}
+podcast {
+    episodes = file("build/episodes")
+    title = 'Código Bot'
+    link = 'https://codigobot.com'
+    language = 'es'
+    copyright = '&#169; 2020 Sergio del Amo'
+    description = 'Sergio y Kini hablan sobre tecnología, productividad, opensource, programación, asistentes de voz (alexa skills), chatbots (telegram bots, slack bots) etc.'
+    author = "Sergio del Amo y Joaquín Engelmo"
+    type = 'EPISODIC'
+    owner {
+        name = "Sergio del Amo"
+        email = "sergio.delamo@softamo.com"
+    }
+    image {
+        url = "https://media.codigobot.com/artwork-beta.png"
+        link = 'https://codigobot.com'
+        title = 'Código Bot'
+        width = 3000
+        height = 3000
+    }
+    block = false
+    categories = 'TECHNOLOGY_SOFTWARE_HOWTO'
+    explicit = false
+}
+
+task createBuildEpisodesFolder {
+    doLast {
+        if (!new File("$projectDir/build").exists()) {
+            boolean created = new File("$projectDir/build").mkdir()
+            logger.quiet("folder ${projectDir}/build " + (created ? "created": "could not be created"))
+        } else {
+            logger.quiet(new File("$projectDir/build").absolutePath + " exists")
+        }
+        if (!new File("$projectDir/build/episodes").exists()) {
+            boolean created = new File("$projectDir/build/episodes").mkdir()
+            logger.quiet("folder ${projectDir}/build/episodes " + (created ? "created": "could not be created"))
+        } else {
+            logger.quiet(new File("$projectDir/build/episodes").absolutePath + "exists")
+        }
+    }
+}
+
+task copyPublicEpisodes(type: Copy) {
+    from rootProject.file("public/episodes")
+    into file("$projectDir/build/episodes")
+    dependsOn('createBuildEpisodesFolder')
+}
+task copyBetaEpisodes(type: Copy) {
+    dependsOn('createBuildEpisodesFolder')
+    from rootProject.file("beta/episodes")
+    into file("$projectDir/build/episodes")
+}
+task copyEpisodes {
+    dependsOn('copyBetaEpisodes', 'copyPublicEpisodes')
+}
+podcastFeed.dependsOn('copyEpisodes')
+
+task createRootBuildFolder {
+    doLast {
+        if (!new File("$rootProject.projectDir/build").exists()) {
+            boolean created = new File("$rootProject.projectDir/build").mkdir()
+            logger.quiet("folder ${rootProject.projectDir}/build " + (created ? "created" : "could not be created"))
+        } else {
+            logger.quiet(new File("$rootProject.projectDir/build").absolutePath + " exists")
+        }
+    }
+}
+task copyRssToRootBuild(type: Copy) {
+    from file("$projectDir/build")
+    include("rss.xml")
+    rename { String fileName ->
+        fileName.replace("rss", "rss-beta")
+    }
+    into rootProject.file("build")
+    dependsOn('createRootBuildFolder')
+}
+
+podcastFeed.finalizedBy('copyRssToRootBuild')
